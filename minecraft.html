@@ -3,59 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szacun SMP - Status</title>
+    <title>Szacun SMP - Wyrok</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #121212; color: white; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
-        .container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
-        
-        .back-btn { margin-bottom: 20px; padding: 10px 20px; background: #333; color: white; text-decoration: none; border-radius: 5px; border: 1px solid #555; transition: 0.3s; }
-        .back-btn:hover { background: #444; }
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap');
 
-        /* Styl ogłoszenia o zawieszeniu */
-        .status-card { 
-            background: #1a1a1a; 
-            padding: 30px; 
-            border: 2px solid #ff4444; 
-            border-radius: 15px; 
-            max-width: 600px; 
-            box-shadow: 0 0 20px rgba(255, 68, 68, 0.2);
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a url('https://www.transparenttextures.com/patterns/dark-leather.png');
+            color: #d1c2a0;
+            font-family: 'MedievalSharp', cursive;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
         }
-        .status-title { color: #ff4444; font-size: 1.8rem; margin-bottom: 15px; text-transform: uppercase; }
-        .status-reason { line-height: 1.6; color: #ccc; font-style: italic; }
-        
-        footer { background: #1a1a1a; padding: 20px 0; border-top: 2px solid #333; margin-top: auto; }
-        .bottom-nav { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
-        .nav-item { color: #888; text-decoration: none; text-align: center; font-weight: bold; }
-        .active { color: #53FC18; }
+
+        /* Górna Nawigacja w stylu W3 */
+        header {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .w3-btn {
+            flex: 1;
+            padding: 15px 0;
+            text-decoration: none;
+            color: #d1c2a0;
+            background: linear-gradient(to right, #1a1a1a, #262626, #1a1a1a);
+            border: 1px solid #3d3d3d;
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .w3-btn:hover {
+            color: #fff;
+            border-color: #ff0000;
+            background: #330000;
+        }
+
+        .active-page {
+            border: 1px solid #5c0000;
+            background: #1a0000;
+            color: #fff;
+        }
+
+        /* Karta ogłoszenia */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .status-card { 
+            background: rgba(20, 20, 20, 0.95);
+            padding: 40px;
+            border: 2px solid #5c0000;
+            border-radius: 0; /* Wiedźmin nie lubi zaokrągleń */
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            position: relative;
+        }
+
+        .status-title { 
+            font-family: 'Cinzel', serif;
+            color: #ff4444; 
+            font-size: 2rem; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+        }
+
+        .status-reason { 
+            line-height: 1.8; 
+            color: #b0a48a; 
+            font-size: 1.1rem;
+        }
+
+        /* Sekcja z cytatem */
+        .witcher-quote {
+            margin-top: 40px;
+            max-width: 500px;
+            font-style: italic;
+            color: #666;
+            position: relative;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .witcher-quote::before {
+            content: "„";
+            font-size: 40px;
+            color: #5c0000;
+            position: absolute;
+            left: -10px;
+            top: 0;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: #5c0000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .back-link:hover { color: #ff0000; }
+
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="top-nav">
+            <a href="minecraft.html" class="w3-btn active-page">Zlecenia</a>
+            <a href="index.html" class="w3-btn">Główny Szlak</a>
+            <a href="faq.html" class="w3-btn">Bestiariusz</a>
+        </div>
+    </header>
+
     <div class="container">
-        <a href="index.html" class="back-btn">← Wróć do strony głównej</a>
-        
         <div class="status-card">
-            <h1 class="status-title">Szacun SMP: Zawieszony</h1>
-            <p>Z przykrością informuję, że projekt serwera <strong>Szacun SMP</strong> zostaje oficjalnie zawieszony.</p>
-            
-            <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
-            
+            <h1 class="status-title">Szacun SMP: Wyrok</h1>
             <p class="status-reason">
-                Powodem tej decyzji są m.in. nieustające konflikty wewnątrz społeczności serwera oraz liczne problemy techniczne i organizacyjne, które uniemożliwiały dalszą, spokojną rozgrywkę. 
+                Z przykrością ogłaszam, iż projekt serwera <strong>Szacun SMP</strong> zostaje zawieszony. 
+                Nieustające waśnie między ludźmi oraz złośliwe chochliki techniczne sprawiły, że dalsza wędrówka tym szlakiem stała się niemożliwa.
             </p>
             
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                Dziękuję wszystkim, którzy budowali ten serwer z pasją. Do zobaczenia w przyszłości.
+            <p style="margin-top: 30px; font-size: 0.9rem; color: #555;">
+                Dziękuję tym, którzy trzymali straż do końca.
             </p>
+        </div>
+
+        <div class="witcher-quote">
+            Zło to zło. Mniejsze, większe, średnie, wszystko jedno, proporcje są umowne, a granice zatarte. Jeżeli mam wybierać pomiędzy jednym złem a drugim, wolę nie wybierać wcale.
+            <span class="quote-author">— Geralt z Rivii</span>
         </div>
     </div>
 
     <footer>
-        <div class="bottom-nav">
-            <a href="minecraft.html" class="nav-item active">SERWER MINECRAFT</a>
-            <a href="index.html" class="nav-item">STRONA GŁÓWNA</a>
-            <a href="faq.html" class="nav-item">FAQ</a>
-        </div>
+        <a href="index.html" class="back-link">← Powrót na bezpieczny szlak</a>
     </footer>
 
 </body>
