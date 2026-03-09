@@ -3,45 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBlajcu</title>
+    <title>Moja Strona</title>
     <style>
         body { font-family: 'Arial', sans-serif; background-color: #121212; color: white; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Styl paska nawigacji (teraz na górze) */
+        header { background: #1a1a1a; padding: 20px 0; border-bottom: 2px solid #333; }
+        .top-nav { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
+        .nav-item { color: #888; text-decoration: none; text-align: center; font-weight: bold; font-size: 1.1rem; }
+        .nav-item:hover { color: #fff; }
+        .active { color: #53FC18; }
+
+        /* Styl sekcji social media */
         .container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
         .social-links { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; }
         .btn { padding: 15px 25px; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; transition: 0.3s; min-width: 120px; }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
         
-        /* Kolory */
         .twitch { background: #9146FF; }
         .kick { background: #53FC18; color: black; }
         .youtube { background: #FF0000; }
         .discord { background: #5865F2; }
         .instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-
-        footer { background: #1a1a1a; padding: 20px 0; border-top: 2px solid #333; position: sticky; bottom: 0; }
-        .bottom-nav { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
-        .nav-item { color: #888; text-decoration: none; text-align: center; font-weight: bold; }
-        .nav-item:hover { color: #fff; }
-        .active { color: #53FC18; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Znajdziesz mnie tutaj:</h1>
-        <div class="social-links">
-            <a href="TWÓJ_LINK" class="btn twitch">Twitch</a>
-            <a href="TWÓJ_LINK" class="btn kick">Kick</a>
-            <a href="TWÓJ_LINK" class="btn youtube">YouTube</a>
-            <a href="TWÓJ_LINK" class="btn discord">Discord</a>
-            <a href="TWÓJ_LINK" class="btn instagram">Instagram</a>
-        </div>
-    </div>
-    <footer>
-        <div class="bottom-nav">
+
+    <header>
+        <div class="top-nav">
             <a href="minecraft.html" class="nav-item">SERWER MINECRAFT</a>
             <a href="index.html" class="nav-item active">STRONA GŁÓWNA</a>
             <a href="faq.html" class="nav-item">FAQ</a>
         </div>
-    </footer>
+    </header>
+
+    <div class="container">
+        <h1>Znajdziesz mnie tutaj:</h1>
+        <div class="social-links">
+            <a href="LINK_DO_TWITCH" class="btn twitch">Twitch</a>
+            <a href="LINK_DO_KICK" class="btn kick">Kick</a>
+            <a href="LINK_DO_YOUTUBE" class="btn youtube">YouTube</a>
+            <a href="LINK_DO_DISCORD" class="btn discord">Discord</a>
+            <a href="LINK_DO_INSTAGRAM" class="btn instagram">Instagram</a>
+        </div>
+    </div>
+
 </body>
 </html>
