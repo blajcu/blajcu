@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #121212; color: white; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 50px 20px; }
+        .back-btn { align-self: center; margin-bottom: 30px; padding: 10px 20px; background: #333; color: white; text-decoration: none; border-radius: 5px; }
+        .faq-item { background: #1a1a1a; width: 100%; max-width: 600px; margin-bottom: 15px; padding: 15px; border-radius: 8px; text-align: left; }
+        .faq-item h3 { margin: 0 0 10px 0; color: #53FC18; }
+        footer { background: #1a1a1a; padding: 20px 0; border-top: 2px solid #333; width: 100%; }
+        .bottom-nav { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
+        .nav-item { color: #888; text-decoration: none; text-align: center; font-weight: bold; }
+        .active { color: #53FC18; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Wróć</a>
+        <h1>FAQ - Pytania i odpowiedzi</h1>
+        
+        <div class="faq-item">
+            <h3>Kiedy streamy?</h3>
+            <p>Zazwyczaj codziennie od godziny 18:00!</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Jak zostać moderatorem?</h3>
+            <p>Bądź aktywny na czacie i pomagaj innym, a na pewno to zauważę.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="bottom-nav">
+            <a href="minecraft.html" class="nav-item">SERWER MINECRAFT</a>
+            <a href="index.html" class="nav-item">STRONA GŁÓWNA</a>
+            <a href="faq.html" class="nav-item active">FAQ</a>
+        </div>
+    </footer>
+</body>
+</html>
