@@ -15,33 +15,46 @@
             align-items: center;
         }
 
-        /* Górny pasek (Bordowy) */
+        /* Sekcja Nawigacji - Teraz jako duże przyciski */
         header {
-            background-color: #8b0015; /* Ciemnoczerwony/Bordowy */
             width: 100%;
             max-width: 900px;
             margin-top: 20px;
-            padding: 15px 0;
-            border-radius: 5px;
         }
 
         .top-nav {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .nav-item {
-            color: white;
+        /* Wspólny styl dla wszystkich przycisków na stronie */
+        .rect-btn {
+            flex: 1;
+            padding: 20px 0;
             text-decoration: none;
+            color: white;
+            border-radius: 5px; /* Delikatne zaokrąglenie dla prostokątnego kształtu */
             font-weight: bold;
-            font-size: 14px;
+            text-align: center;
             text-transform: uppercase;
+            font-size: 14px;
+            transition: transform 0.2s, filter 0.2s;
         }
+
+        .rect-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+        }
+
+        /* Losowe/Wybrane kolory dla górnych przycisków */
+        .btn-mc { background: linear-gradient(45deg, #2e7d32, #66bb6a); } /* Zielony */
+        .btn-home { background: linear-gradient(45deg, #1565c0, #42a5f5); } /* Niebieski */
+        .btn-faq { background: linear-gradient(45deg, #6a1b9a, #ab47bc); } /* Fioletowy */
 
         /* Sekcja Social Media */
         .container {
-            margin-top: 40px;
+            margin-top: 20px;
             width: 100%;
             max-width: 900px;
         }
@@ -49,26 +62,11 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
-        .btn {
-            flex: 1;
-            min-width: 140px;
-            padding: 15px 0;
-            text-decoration: none;
-            color: white;
-            border-radius: 10px;
-            font-weight: bold;
-            text-align: center;
-            font-size: 16px;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover { transform: scale(1.05); }
-
-        /* Kolory przycisków z Twojego obrazka */
+        /* Specyficzne kolory social media */
         .twitch { background-color: #9146FF; }
         .kick { background-color: #53FC18; color: black; }
         .youtube { background-color: #FF0000; }
@@ -81,19 +79,19 @@
 
     <header>
         <div class="top-nav">
-            <a href="minecraft.html" class="nav-item">MINECRAFT</a>
-            <a href="index.html" class="nav-item">STRONA GŁÓWNA</a>
-            <a href="faq.html" class="nav-item">FAQ</a>
+            <a href="minecraft.html" class="rect-btn btn-mc">Minecraft</a>
+            <a href="index.html" class="rect-btn btn-home">Strona Główna</a>
+            <a href="faq.html" class="rect-btn btn-faq">FAQ</a>
         </div>
     </header>
 
     <div class="container">
         <div class="social-links">
-            <a href="TWÓJ_LINK" class="btn twitch">Twitch</a>
-            <a href="TWÓJ_LINK" class="btn kick">Kick</a>
-            <a href="TWÓJ_LINK" class="btn youtube">YouTube</a>
-            <a href="TWÓJ_LINK" class="btn discord">Discord</a>
-            <a href="TWÓJ_LINK" class="btn instagram">Instagram</a>
+            <a href="TWÓJ_LINK" class="rect-btn twitch">Twitch</a>
+            <a href="TWÓJ_LINK" class="rect-btn kick">Kick</a>
+            <a href="TWÓJ_LINK" class="rect-btn youtube">YouTube</a>
+            <a href="TWÓJ_LINK" class="rect-btn discord">Discord</a>
+            <a href="TWÓJ_LINK" class="rect-btn instagram">Instagram</a>
         </div>
     </div>
 
